@@ -6,7 +6,6 @@ class Song
 
 
   def self.table_name
-    binding.pry
     self.to_s.downcase.pluralize
   end
 
@@ -17,6 +16,7 @@ class Song
 
     table_info = DB[:conn].execute(sql)
     column_names = []
+    binding.pry
     table_info.each do |row|
       column_names << row["name"]
     end
